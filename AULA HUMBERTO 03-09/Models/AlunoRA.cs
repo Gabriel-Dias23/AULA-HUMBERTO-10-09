@@ -11,14 +11,15 @@ namespace exemploCrud.Models
         public string cpf { get; set; }
         public string nome { get; set; }
 
-        [RAValidation]
+        [RAValidation(ErrorMessage = "Digite um ra valido")]
         [Required(ErrorMessage = "Começe escrevendo com RA")]
-        [MaxLength(6, ErrorMessage = "Digite no maximo 8 caracteres ")]
+        [MaxLength(8, ErrorMessage = "Digite no maximo 8 caracteres ")]
         public string RA { get; set; }
         //RA049341
 
         [StringLength(250)]
         [MinLength(10)]
+        [EmailAddress(ErrorMessage = "Digite um email valido")]
         public string Email { get; set; }
 
         public string Ativo { get; set;}
